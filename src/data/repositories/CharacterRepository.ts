@@ -8,4 +8,6 @@ export interface CharacterRepository {
 		pageSize?: number,
 		signal?: AbortSignal
 	): Promise<{ results: Character[]; totalCount: number }>;
+
+	getById(id: number): Promise<Character>;
 }

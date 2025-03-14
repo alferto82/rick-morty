@@ -24,7 +24,7 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, showBack = false }
 			<p>{message}</p>
 			{showBack && (
 				<div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1rem' }}>
-					<button onClick={() => navigate('/')}>Ir al Home</button>
+					<button onClick={() => navigate('/')}>Back to Home</button>
 				</div>
 			)}
 		</div>

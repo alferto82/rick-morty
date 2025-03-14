@@ -54,3 +54,13 @@ export const fetchAllCharacters = async (
 		return { results: paginatedResults, totalCount };
 	}
 };
+
+export const fetchCharacterById = async (id: number): Promise<Character> => {
+	const url = `${BASE_URL}/${id}`;
+	const response = await fetch(url);
+	if (!response.ok) {
+		const errorData = await response.json();
+		throw new Error(errorData.error || 'Character not found');
+	}
+	return response.json();
+};
