@@ -1,18 +1,17 @@
 import styled from 'styled-components';
+import { colors } from '../../../styles/theme';
 import { rem } from 'polished';
 
 export const DetailContainer = styled.div`
 	padding: ${rem(20)};
 	max-width: ${rem(700)};
 	margin: 0 auto;
-	font-family: 'Inter', sans-serif;
 `;
 
 export const DetailTitle = styled.h1`
-	color: #0a5beb;
+	color: ${colors.primary};
 	text-align: center;
 	margin-bottom: ${rem(20)};
-	font-family: 'Poppins', sans-serif;
 `;
 
 export const InfoContainer = styled.div`
@@ -42,7 +41,7 @@ export const InfoDetails = styled.div`
 
 export const DetailInfo = styled.p`
 	font-size: ${rem(14)};
-	color: #555;
+	color: ${colors.text};
 	margin: 0;
 `;
 
@@ -52,7 +51,7 @@ export const DetailLabel = styled.span`
 
 export const BackButton = styled.button`
 	padding: ${rem(10)} ${rem(15)};
-	background-color: #0a5beb;
+	background-color: ${colors.primary};
 	color: #fff;
 	border: none;
 	border-radius: ${rem(4)};
@@ -61,6 +60,6 @@ export const BackButton = styled.button`
 	transition: background-color 0.3s;
 	margin-bottom: ${rem(20)};
 	&:hover {
-		background-color: #004f9e;
+		background-color: ${colors.primaryDark};
 	}
 `;

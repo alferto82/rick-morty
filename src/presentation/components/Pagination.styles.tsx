@@ -14,7 +14,8 @@ export const StyledPagination = styled.div`
 export const StyledButton = styled.button`
 	padding: ${spacing.gapSmall} ${rem(15)};
 	background-color: ${colors.primary};
-	color: ${colors.text};
+
+	color: ${colors.textSecondary};
 	border: none;
 	border-radius: ${borderRadius.small};
 	cursor: pointer;
@@ -23,5 +24,8 @@ export const StyledButton = styled.button`
 	&:disabled {
 		background-color: ${colors.secondary};
 		cursor: not-allowed;
+	}
+	&:hover {
+		background-color: ${colors.primaryDark};
 	}
 `;

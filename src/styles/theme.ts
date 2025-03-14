@@ -1,11 +1,11 @@
-import { rem, lighten, darken } from 'polished';
+import { rem, darken } from 'polished';
 
 export const colors = {
-	primary: '#0a5beb',
-	primaryLight: lighten(0.2, '#0a5beb'),
-	primaryDark: darken(0.2, '#0a5beb'),
-	secondary: '#ccc',
-	text: '#fff'
+	primary: '#5BD24F',
+	primaryDark: darken(0.2, '#5BD24F'),
+	secondary: '#CCC',
+	text: '#555',
+	textSecondary: '#FFF'
 };
 
 export const spacing = {
@@ -16,7 +16,9 @@ export const spacing = {
 };
 
 export const fontSizes = {
-	small: rem(14)
+	small: rem(14),
+	medium: rem(16),
+	large: rem(24)
 };
 
 export const borderRadius = {
