@@ -19,11 +19,17 @@ export const InfoContainer = styled.div`
 	gap: ${rem(20)};
 	align-items: flex-start;
 	flex-wrap: wrap;
+	@media (max-width: 600px) {
+		flex-direction: column;
+	}
 `;
 
 export const ImageContainer = styled.div`
 	flex: 0 0 auto;
 	max-width: ${rem(250)};
+	@media (max-width: 600px) {
+		flex-direction: column;
+	}
 `;
 
 export const DetailImage = styled.img`

@@ -38,11 +38,17 @@ export const StyledFilterGroup = styled.div`
 	gap: ${spacing.gapSmall};
 	width: 100%;
 	max-width: ${rem(300)};
+	@media (max-width: 600px) {
+		align-items: flex-start;
+	}
 `;
 
 export const StyledAdditionalFilterRow = styled.div`
 	display: flex;
 	gap: ${spacing.gapSmall};
+	@media (max-width: 600px) {
+		flex-direction: column;
+	}
 `;
 
 export const StyledLabel = styled.div`
