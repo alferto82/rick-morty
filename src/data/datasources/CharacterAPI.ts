@@ -1,4 +1,3 @@
-// src/data/datasources/CharacterAPI.ts
 import { Character } from '../../domain/entities/Character';
 import { CharactersFilter } from '../../domain/usecases/GetCharacters';
 

@@ -30,7 +30,6 @@ export const useCharacters = ({
 	const [loading, setLoading] = useState<boolean>(false);
 	const [error, setError] = useState<string | null>(null);
 
-	// Memoizamos los filtros y el objeto de orden para que sus referencias sean estables
 	const memoizedFilters = useMemo(
 		() => ({
 			name: filters.name,

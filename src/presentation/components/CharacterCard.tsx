@@ -1,4 +1,3 @@
-// src/presentation/components/CharacterCard.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Character } from '../../domain/entities/Character';
