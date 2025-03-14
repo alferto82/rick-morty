@@ -39,9 +39,18 @@ const CharacterList: React.FC = () => {
 				filters={filters}
 				orderField={orderField}
 				orderDirection={orderDirection}
-				onFilterChange={newFilters => setFilters(newFilters)}
-				onOrderFieldChange={field => setOrderField(field)}
-				onOrderDirectionChange={direction => setOrderDirection(direction)}
+				onFilterChange={newFilters => {
+					setFilters(newFilters);
+					setCurrentPage(1);
+				}}
+				onOrderFieldChange={field => {
+					setOrderField(field);
+					setCurrentPage(1);
+				}}
+				onOrderDirectionChange={direction => {
+					setOrderDirection(direction);
+					setCurrentPage(1);
+				}}
 			/>
 
 			{!loading && !error && characters.length > 0 && (

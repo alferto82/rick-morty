@@ -58,7 +58,7 @@ export const DetailLabel = styled.span`
 export const BackButton = styled.button`
 	padding: ${rem(10)} ${rem(15)};
 	background-color: ${colors.primary};
-	color: #fff;
+	color: ${colors.textSecondary};
 	border: none;
 	border-radius: ${rem(4)};
 	cursor: pointer;
