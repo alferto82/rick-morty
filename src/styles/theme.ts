@@ -5,7 +5,10 @@ export const colors = {
 	primaryDark: darken(0.2, '#5BD24F'),
 	secondary: '#CCC',
 	text: '#555',
-	textSecondary: '#FFF'
+	textSecondary: '#FFF',
+	background: '##FFF',
+	error: 'red',
+	errorBackground: '#ffe6e6'
 };
 
 export const spacing = {
@@ -23,4 +26,8 @@ export const fontSizes = {
 
 export const borderRadius = {
 	small: rem(4)
+};
+
+export const shadows = {
+	small: `0 0 ${rem(10)} rgba(0, 0, 0, 0.2)`
 };

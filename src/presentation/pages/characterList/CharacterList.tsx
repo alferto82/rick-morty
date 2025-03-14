@@ -4,16 +4,9 @@ import CharacterCard from '../../components/CharacterCard';
 import { useCharacters } from '../../hooks/useCharacters';
 import { CharactersFilter } from '../../../domain/usecases/GetCharacters';
 import ErrorMessage from '../../components/ErrorMessage';
-import {
-	StyledContainer,
-	StyledTitle,
-	StyledFilterSection,
-	StyledInput,
-	StyledOrderRow,
-	StyledSelect,
-	StyledCardGrid
-} from './CharacterList.styles';
+import { StyledContainer, StyledTitle, StyledCardGrid } from './CharacterList.styles';
 import Pagination from '../../components/Pagination';
+import FilterControls from '../../components/FilterControls';
 
 const CharacterList: React.FC = () => {
 	const [filters, setFilters] = useState<CharactersFilter>({});
@@ -42,29 +35,14 @@ const CharacterList: React.FC = () => {
 	return (
 		<StyledContainer>
 			<StyledTitle>Rick and Morty Characters</StyledTitle>
-			<StyledFilterSection>
-				<StyledInput
-					type="text"
-					placeholder="Search by name..."
-					value={filters.name || ''}
-					onChange={e => setFilters(prev => ({ ...prev, name: e.target.value }))}
-				/>
-				<StyledOrderRow>
-					<StyledSelect value={orderField} onChange={e => setOrderField(e.target.value as keyof Character)}>
-						<option value="name">Name</option>
-						<option value="status">Status</option>
-						<option value="species">Specie</option>
-						<option value="gender">Gender</option>
-					</StyledSelect>
-					<StyledSelect
-						value={orderDirection}
-						onChange={e => setOrderDirection(e.target.value as 'asc' | 'desc')}
-					>
-						<option value="asc">Ascending order</option>
-						<option value="desc">Descending order</option>
-					</StyledSelect>
-				</StyledOrderRow>
-			</StyledFilterSection>
+			<FilterControls
+				filters={filters}
+				orderField={orderField}
+				orderDirection={orderDirection}
+				onFilterChange={newFilters => setFilters(newFilters)}
+				onOrderFieldChange={field => setOrderField(field)}
+				onOrderDirectionChange={direction => setOrderDirection(direction)}
+			/>
 
 			<Pagination
 				currentPage={currentPage}
