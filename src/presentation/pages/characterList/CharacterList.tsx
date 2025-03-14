@@ -7,6 +7,7 @@ import ErrorMessage from '../../components/ErrorMessage';
 import { StyledContainer, StyledTitle, StyledCardGrid } from './CharacterList.styles';
 import Pagination from '../../components/Pagination';
 import FilterControls from '../../components/FilterControls';
+import LoadingIndicator from '../../components/LoadingIndicator';
 
 const CharacterList: React.FC = () => {
 	const [filters, setFilters] = useState<CharactersFilter>({});
@@ -62,15 +63,16 @@ const CharacterList: React.FC = () => {
 				/>
 			)}
 
-			{loading && <div>Loading...</div>}
+			{loading && <LoadingIndicator />}
 			{error && <ErrorMessage message={error} />}
 
-			<StyledCardGrid>
-				{characters.map(character => (
-					<CharacterCard key={character.id} character={character} />
-				))}
-			</StyledCardGrid>
-
+			{!loading && (
+				<StyledCardGrid>
+					{characters.map(character => (
+						<CharacterCard key={character.id} character={character} />
+					))}
+				</StyledCardGrid>
+			)}
 			{!loading && !error && characters.length > 0 && (
 				<Pagination
 					currentPage={currentPage}
