@@ -1,10 +1,15 @@
-import Sample from './components/sample';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CharacterList from './presentation/pages/CharacterList';
 
-/**
- * This is the entry point of the App, feel free to
- * modify this file as you want!
- *
- */
-const App = () => <Sample />;
+const App: React.FC = () => {
+	return (
+		<Router>
+			<Routes>
+				<Route path="/" element={<CharacterList />} />
+			</Routes>
+		</Router>
+	);
+};
 
 export default App;
