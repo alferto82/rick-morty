@@ -87,7 +87,15 @@ const FilterControls: React.FC<FilterControlsProps> = ({
 					>
 						<option value="all">All Species</option>
 						<option value="Human">Human</option>
+						<option value="Humanoid">Humanoid</option>
 						<option value="Alien">Alien</option>
+						<option value="Poopybutthole">Poopybutthole</option>
+						<option value="Mythological Creature">Mythological Creature</option>
+						<option value="Robot">Robot</option>
+						<option value="Cronenberg">Cronenberg</option>
+						<option value="Disease">Disease</option>
+
+						<option value="unknow">unknow</option>
 					</StyledSelect>
 					<StyledSelect
 						value={filters.gender || 'all'}
