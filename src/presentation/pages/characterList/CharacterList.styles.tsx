@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { borderRadius, spacing, colors, fontSizes } from '../../../styles/theme';
+import { rem } from 'polished';
+import { colors, spacing, fontSizes, borderRadius } from '../../../styles/theme';
 
 export const StyledContainer = styled.div`
 	padding: ${spacing.containerPadding};
@@ -15,9 +16,9 @@ export const StyledTitle = styled.h1`
 export const StyledFilterSection = styled.div`
 	margin-bottom: ${spacing.margin};
 	display: flex;
+	flex-direction: column;
 	gap: ${spacing.gapSmall};
-	flex-wrap: wrap;
-	justify-content: center;
+	align-items: center;
 `;
 
 export const StyledInput = styled.input`
@@ -25,6 +26,16 @@ export const StyledInput = styled.input`
 	border: 1px solid ${colors.secondary};
 	border-radius: ${borderRadius.small};
 	font-size: ${fontSizes.small};
+	width: 100%;
+	max-width: ${rem(300)};
+`;
+
+export const StyledOrderRow = styled.div`
+	display: flex;
+	gap: ${spacing.gapSmall};
+	justify-content: center;
+	width: 100%;
+	max-width: ${rem(300)};
 `;
 
 export const StyledSelect = styled.select`

@@ -9,6 +9,7 @@ import {
 	StyledTitle,
 	StyledFilterSection,
 	StyledInput,
+	StyledOrderRow,
 	StyledSelect,
 	StyledCardGrid
 } from './CharacterList.styles';
@@ -48,19 +49,21 @@ const CharacterList: React.FC = () => {
 					value={filters.name || ''}
 					onChange={e => setFilters(prev => ({ ...prev, name: e.target.value }))}
 				/>
-				<StyledSelect value={orderField} onChange={e => setOrderField(e.target.value as keyof Character)}>
-					<option value="name">Name</option>
-					<option value="status">Status</option>
-					<option value="species">Specie</option>
-					<option value="gender">Gender</option>
-				</StyledSelect>
-				<StyledSelect
-					value={orderDirection}
-					onChange={e => setOrderDirection(e.target.value as 'asc' | 'desc')}
-				>
-					<option value="asc">Ascending order</option>
-					<option value="desc">Descending order</option>
-				</StyledSelect>
+				<StyledOrderRow>
+					<StyledSelect value={orderField} onChange={e => setOrderField(e.target.value as keyof Character)}>
+						<option value="name">Name</option>
+						<option value="status">Status</option>
+						<option value="species">Specie</option>
+						<option value="gender">Gender</option>
+					</StyledSelect>
+					<StyledSelect
+						value={orderDirection}
+						onChange={e => setOrderDirection(e.target.value as 'asc' | 'desc')}
+					>
+						<option value="asc">Ascending order</option>
+						<option value="desc">Descending order</option>
+					</StyledSelect>
+				</StyledOrderRow>
 			</StyledFilterSection>
 
 			<Pagination
