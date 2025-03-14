@@ -20,12 +20,7 @@ interface UseCharactersReturn {
 	error: string | null;
 }
 
-export const useCharacters = ({
-	filters,
-	order,
-	currentPage,
-	pageSize = 20
-}: UseCharactersProps): UseCharactersReturn => {
+export const useCharacters = ({ filters, order, currentPage }: UseCharactersProps): UseCharactersReturn => {
 	const [data, setData] = useState<CharactersResult | null>(null);
 	const [loading, setLoading] = useState<boolean>(false);
 	const [error, setError] = useState<string | null>(null);
@@ -61,7 +56,6 @@ export const useCharacters = ({
 					memoizedFilters,
 					memoizedOrder,
 					currentPage,
-					pageSize,
 					controller.signal
 				);
 				setData(result);
@@ -80,7 +74,7 @@ export const useCharacters = ({
 		return () => {
 			controller.abort();
 		};
-	}, [memoizedFilters, memoizedOrder, currentPage, pageSize]);
+	}, [memoizedFilters, memoizedOrder, currentPage]);
 
 	return { data, loading, error };
 };

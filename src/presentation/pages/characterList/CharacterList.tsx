@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Character } from '../../../domain/entities/Character';
 import CharacterCard from '../../components/CharacterCard';
 import { useCharacters } from '../../hooks/useCharacters';
@@ -18,20 +18,34 @@ const CharacterList: React.FC = () => {
 	const { data, loading, error } = useCharacters({
 		filters,
 		order: { orderBy: orderField, direction: orderDirection },
-		currentPage,
-		pageSize: 20
+		currentPage
 	});
 
 	const totalPages = data?.totalPages || 1;
 	const characters = data?.results || [];
 
-	const handlePrevPage = () => {
+	const handlePrevPage = useCallback(() => {
 		if (currentPage > 1) setCurrentPage(prev => prev - 1);
-	};
+	}, [currentPage]);
 
-	const handleNextPage = () => {
+	const handleNextPage = useCallback(() => {
 		if (currentPage < totalPages) setCurrentPage(prev => prev + 1);
-	};
+	}, [currentPage, totalPages]);
+
+	const handleFilterChange = useCallback((newFilters: CharactersFilter) => {
+		setFilters(newFilters);
+		setCurrentPage(1);
+	}, []);
+
+	const handleOrderFieldChange = useCallback((field: keyof Character) => {
+		setOrderField(field);
+		setCurrentPage(1);
+	}, []);
+
+	const handleOrderDirectionChange = useCallback((direction: 'asc' | 'desc') => {
+		setOrderDirection(direction);
+		setCurrentPage(1);
+	}, []);
 
 	return (
 		<StyledContainer>
@@ -40,18 +54,9 @@ const CharacterList: React.FC = () => {
 				filters={filters}
 				orderField={orderField}
 				orderDirection={orderDirection}
-				onFilterChange={newFilters => {
-					setFilters(newFilters);
-					setCurrentPage(1);
-				}}
-				onOrderFieldChange={field => {
-					setOrderField(field);
-					setCurrentPage(1);
-				}}
-				onOrderDirectionChange={direction => {
-					setOrderDirection(direction);
-					setCurrentPage(1);
-				}}
+				onFilterChange={handleFilterChange}
+				onOrderFieldChange={handleOrderFieldChange}
+				onOrderDirectionChange={handleOrderDirectionChange}
 			/>
 
 			{!loading && !error && characters.length > 0 && (
@@ -73,6 +78,7 @@ const CharacterList: React.FC = () => {
 					))}
 				</StyledCardGrid>
 			)}
+
 			{!loading && !error && characters.length > 0 && (
 				<Pagination
 					currentPage={currentPage}

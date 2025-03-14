@@ -55,4 +55,4 @@ const CharacterDetail: React.FC = () => {
 	);
 };
 
-export default CharacterDetail;
+export default React.memo(CharacterDetail);

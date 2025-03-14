@@ -9,4 +9,4 @@ const LoadingIndicator: React.FC = () => {
 	);
 };
 
-export default LoadingIndicator;
+export default React.memo(LoadingIndicator);

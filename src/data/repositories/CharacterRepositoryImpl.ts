@@ -3,8 +3,8 @@ import { fetchAllCharacters, fetchCharacterById } from '../datasources/Character
 import { CharacterRepository } from './CharacterRepository';
 
 export const characterRepositoryImpl: CharacterRepository = {
-	getAll: async (filter?: CharactersFilter, page: number = 1, pageSize: number = 20, signal?: AbortSignal) =>
-		fetchAllCharacters(filter, page, pageSize, signal),
+	getAll: async (filter?: CharactersFilter, page: number = 1, signal?: AbortSignal) =>
+		fetchAllCharacters(filter, page, signal),
 
 	getById: async (id: number) => fetchCharacterById(id)
 };

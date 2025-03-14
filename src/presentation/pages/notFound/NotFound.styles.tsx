@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { colors, fontSizes, spacing } from '../../../styles/theme';
+import { rem } from 'polished';
+import { colors, spacing, fontSizes, borderRadius } from '../../../styles/theme';
 
 export const Container = styled.div`
 	padding: ${spacing.containerPadding};
@@ -17,4 +18,18 @@ export const Message = styled.p`
 	font-size: ${fontSizes.medium};
 	color: ${colors.text};
 	margin-bottom: ${spacing.margin};
+`;
+
+export const StyledButton = styled.button`
+	padding: ${spacing.gapSmall} ${rem(15)};
+	background-color: ${colors.primary};
+	color: ${colors.background};
+	border: none;
+	border-radius: ${borderRadius.small};
+	cursor: pointer;
+	font-size: ${fontSizes.small};
+	transition: background-color 0.3s;
+	&:hover {
+		background-color: ${colors.primaryDark};
+	}
 `;

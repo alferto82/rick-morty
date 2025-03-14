@@ -22,4 +22,4 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, showBack = false }
 	);
 };
 
-export default ErrorMessage;
+export default React.memo(ErrorMessage);

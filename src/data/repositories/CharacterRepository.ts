@@ -5,7 +5,6 @@ export interface CharacterRepository {
 	getAll(
 		filter?: CharactersFilter,
 		page?: number,
-		pageSize?: number,
 		signal?: AbortSignal
 	): Promise<{ results: Character[]; totalCount: number }>;
 

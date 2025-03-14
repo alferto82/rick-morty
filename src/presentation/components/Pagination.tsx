@@ -22,4 +22,4 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPrev
 	</StyledPagination>
 );
 
-export default Pagination;
+export default React.memo(Pagination);

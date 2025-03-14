@@ -1,6 +1,4 @@
-import React from 'react';
-import { Character } from '../../domain/entities/Character';
-import { CharactersFilter } from '../../domain/usecases/GetCharacters';
+import React, { useCallback } from 'react';
 import {
 	StyledFilterSection,
 	StyledInput,
@@ -11,6 +9,8 @@ import {
 	StyledFilterGroup,
 	StyledAdditionalFilterRow
 } from './FilterControls.styles';
+import { Character } from '../../domain/entities/Character';
+import { CharactersFilter } from '../../domain/usecases/GetCharacters';
 
 interface FilterControlsProps {
 	filters: CharactersFilter;
@@ -29,16 +29,22 @@ const FilterControls: React.FC<FilterControlsProps> = ({
 	onOrderFieldChange,
 	onOrderDirectionChange
 }) => {
-	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		onFilterChange({ ...filters, name: e.target.value });
-	};
+	const handleInputChange = useCallback(
+		(e: React.ChangeEvent<HTMLInputElement>) => {
+			onFilterChange({ ...filters, name: e.target.value });
+		},
+		[filters, onFilterChange]
+	);
 
-	const handleAdditionalFilterChange = (key: keyof CharactersFilter, value: string) => {
-		onFilterChange({
-			...filters,
-			[key]: value === 'all' ? undefined : value
-		});
-	};
+	const handleAdditionalFilterChange = useCallback(
+		(key: keyof CharactersFilter, value: string) => {
+			onFilterChange({
+				...filters,
+				[key]: value === 'all' ? undefined : value
+			});
+		},
+		[filters, onFilterChange]
+	);
 
 	return (
 		<StyledFilterSection>
@@ -94,7 +100,6 @@ const FilterControls: React.FC<FilterControlsProps> = ({
 						<option value="Robot">Robot</option>
 						<option value="Cronenberg">Cronenberg</option>
 						<option value="Disease">Disease</option>
-
 						<option value="unknow">unknow</option>
 					</StyledSelect>
 					<StyledSelect
@@ -113,4 +118,4 @@ const FilterControls: React.FC<FilterControlsProps> = ({
 	);
 };
 
-export default FilterControls;
+export default React.memo(FilterControls);
