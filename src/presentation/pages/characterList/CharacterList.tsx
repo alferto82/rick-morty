@@ -44,12 +44,14 @@ const CharacterList: React.FC = () => {
 				onOrderDirectionChange={direction => setOrderDirection(direction)}
 			/>
 
-			<Pagination
-				currentPage={currentPage}
-				totalPages={totalPages}
-				onPrev={handlePrevPage}
-				onNext={handleNextPage}
-			/>
+			{!loading && !error && characters.length > 0 && (
+				<Pagination
+					currentPage={currentPage}
+					totalPages={totalPages}
+					onPrev={handlePrevPage}
+					onNext={handleNextPage}
+				/>
+			)}
 
 			{loading && <div>Loading...</div>}
 			{error && <ErrorMessage message={error} />}
@@ -60,12 +62,14 @@ const CharacterList: React.FC = () => {
 				))}
 			</StyledCardGrid>
 
-			<Pagination
-				currentPage={currentPage}
-				totalPages={totalPages}
-				onPrev={handlePrevPage}
-				onNext={handleNextPage}
-			/>
+			{!loading && !error && characters.length > 0 && (
+				<Pagination
+					currentPage={currentPage}
+					totalPages={totalPages}
+					onPrev={handlePrevPage}
+					onNext={handleNextPage}
+				/>
+			)}
 		</StyledContainer>
 	);
 };
