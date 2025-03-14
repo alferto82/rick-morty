@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CharacterList from './presentation/pages/characterList/CharacterList';
 import { GlobalStyle } from './styles/GlobalStyles';
 import CharacterDetails from './presentation/pages/characterDetail/CharacterDetail';
+import NotFoundPage from './presentation/pages/notFound/NotFoundPage';
 
 const App: React.FC = () => {
 	// This assignment is necessary to avoid a type error
@@ -14,6 +15,7 @@ const App: React.FC = () => {
 			<Routes>
 				<Route path="/" element={<CharacterList />} />
 				<Route path="/character/:id" element={<CharacterDetails />} />
+				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 		</Router>
 	);
