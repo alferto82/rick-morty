@@ -1,7 +1,6 @@
 {
 	"name": "technical-challenge",
 	"version": "0.1.0",
-	"homepage": "https://alferto82.github.io/rick-morty",
 	"private": true,
 	"dependencies": {
 		"@types/jest": "^27.5.2",
