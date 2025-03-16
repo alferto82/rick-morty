@@ -1,5 +1,5 @@
-import { CharacterRepository } from '../../data/repositories/CharacterRepository';
-import { Character } from '../entities/Character';
+import { CharacterRepository } from 'data/repositories/CharacterRepository';
+import { Character } from 'domain/entities/Character';
 
 export interface CharactersFilter {
 	name?: string;

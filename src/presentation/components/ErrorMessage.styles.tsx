@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { borderRadius, colors, spacing, fontSizes } from '../../styles/theme';
+import { borderRadius, colors, spacing, fontSizes } from 'styles/theme';
 
 export const ErrorContainer = styled.div`
 	border: 1px solid ${colors.error};

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
 import { Link } from 'react-router-dom';
-import { colors, spacing, fontSizes, borderRadius } from '../../styles/theme';
+import { colors, spacing, fontSizes, borderRadius } from 'styles/theme';
 
 export const CardContainer = styled(Link)`
 	display: block;

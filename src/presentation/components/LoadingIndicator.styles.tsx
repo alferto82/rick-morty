@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { rem } from 'polished';
-import { colors } from '../../styles/theme';
+import { colors } from 'styles/theme';
 
 const spin = keyframes`
   from { transform: rotate(0deg); }

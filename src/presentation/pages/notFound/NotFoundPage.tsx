@@ -1,4 +1,3 @@
-// src/presentation/pages/NotFoundPage.tsx
 import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Title, Message, StyledButton } from './NotFound.styles';

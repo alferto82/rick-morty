@@ -1,5 +1,5 @@
-import { CharactersFilter } from '../../domain/usecases/GetCharacters';
-import { fetchAllCharacters, fetchCharacterById } from '../datasources/CharacterAPI';
+import { CharactersFilter } from 'domain/usecases/GetCharacters';
+import { fetchAllCharacters, fetchCharacterById } from 'data/datasources/CharacterAPI';
 import { CharacterRepository } from './CharacterRepository';
 
 export const characterRepositoryImpl: CharacterRepository = {

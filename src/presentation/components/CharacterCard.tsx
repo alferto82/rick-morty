@@ -1,5 +1,5 @@
 import React from 'react';
-import { Character } from '../../domain/entities/Character';
+import { Character } from 'domain/entities/Character';
 import { CardContainer, CardImage, CardContent, CardTitle, CardText } from './CharacterCard.styles';
 
 interface CharacterCardProps {

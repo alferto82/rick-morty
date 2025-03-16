@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useCharacterDetail } from '../../hooks/useCharacterDetail';
-import ErrorMessage from '../../components/ErrorMessage';
+import { useCharacterDetail } from 'presentation/hooks/useCharacterDetail';
+import ErrorMessage from 'presentation/components/ErrorMessage';
 import {
 	DetailContainer,
 	DetailTitle,
@@ -13,6 +13,7 @@ import {
 	DetailLabel,
 	BackButton
 } from './CharacterDetail.styles';
+import LoadingIndicator from 'presentation/components/LoadingIndicator';
 
 const CharacterDetail: React.FC = () => {
 	const { id } = useParams<{ id: string }>();
@@ -21,7 +22,7 @@ const CharacterDetail: React.FC = () => {
 
 	const { character, loading, error } = useCharacterDetail(numericId);
 
-	if (loading) return <div>Loading...</div>;
+	if (loading) return <LoadingIndicator />;
 	if (error) return <ErrorMessage message={error} showBack />;
 	if (!character) return <ErrorMessage message={'Character not found'} showBack />;
 

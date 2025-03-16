@@ -1,6 +1,6 @@
-import { Character } from '../../domain/entities/Character';
-import { CharactersFilter } from '../../domain/usecases/GetCharacters';
-import { createInMemoryCacheService } from '../cache/inMemoryCacheService';
+import { Character } from 'domain/entities/Character';
+import { CharactersFilter } from 'domain/usecases/GetCharacters';
+import { createInMemoryCacheService } from 'data/cache/inMemoryCacheService';
 
 const BASE_URL = 'https://rickandmortyapi.com/api/character';
 

@@ -3,7 +3,7 @@ import { LoadingContainer, Spinner } from './LoadingIndicator.styles';
 
 const LoadingIndicator: React.FC = () => {
 	return (
-		<LoadingContainer>
+		<LoadingContainer data-testid="loading-indicator">
 			<Spinner />
 		</LoadingContainer>
 	);

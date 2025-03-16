@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Character } from '../../domain/entities/Character';
-import { characterRepositoryImpl } from '../../data/repositories/CharacterRepositoryImpl';
-import { getCharacter } from '../../domain/usecases/GetCharacter';
+import { Character } from 'domain/entities/Character';
+import { characterRepositoryImpl } from 'data/repositories/CharacterRepositoryImpl';
+import { getCharacter } from 'domain/usecases/GetCharacter';
 
 export const useCharacterDetail = (id: number) => {
 	const [character, setCharacter] = useState<Character | null>(null);

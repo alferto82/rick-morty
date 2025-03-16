@@ -1,11 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
-import { characterRepositoryImpl } from '../../data/repositories/CharacterRepositoryImpl';
-import {
-	CharactersFilter,
-	CharactersOrder,
-	CharactersResult,
-	getCharacters
-} from '../../domain/usecases/GetCharacters';
+import { characterRepositoryImpl } from 'data/repositories/CharacterRepositoryImpl';
+import { CharactersFilter, CharactersOrder, CharactersResult, getCharacters } from 'domain/usecases/GetCharacters';
 
 interface UseCharactersProps {
 	filters: CharactersFilter;

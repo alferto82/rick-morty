@@ -1,5 +1,5 @@
-import { Character } from '../../domain/entities/Character';
-import { CharactersFilter } from '../../domain/usecases/GetCharacters';
+import { Character } from 'domain/entities/Character';
+import { CharactersFilter } from 'domain/usecases/GetCharacters';
 
 export interface CharacterRepository {
 	getAll(

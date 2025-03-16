@@ -9,8 +9,8 @@ import {
 	StyledFilterGroup,
 	StyledAdditionalFilterRow
 } from './FilterControls.styles';
-import { Character } from '../../domain/entities/Character';
-import { CharactersFilter } from '../../domain/usecases/GetCharacters';
+import { Character } from 'domain/entities/Character';
+import { CharactersFilter } from 'domain/usecases/GetCharacters';
 
 interface FilterControlsProps {
 	filters: CharactersFilter;

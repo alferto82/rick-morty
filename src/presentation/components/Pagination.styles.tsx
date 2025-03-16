@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { borderRadius, spacing, colors, fontSizes } from '../../styles/theme';
+import { borderRadius, spacing, colors, fontSizes } from 'styles/theme';
 
 export const StyledPagination = styled.div`
 	margin-top: ${spacing.margin};

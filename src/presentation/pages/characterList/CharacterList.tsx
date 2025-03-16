@@ -1,13 +1,13 @@
 import React, { useState, useCallback } from 'react';
-import { Character } from '../../../domain/entities/Character';
-import CharacterCard from '../../components/CharacterCard';
-import { useCharacters } from '../../hooks/useCharacters';
-import { CharactersFilter } from '../../../domain/usecases/GetCharacters';
-import ErrorMessage from '../../components/ErrorMessage';
+import { Character } from 'domain/entities/Character';
+import CharacterCard from 'presentation/components/CharacterCard';
+import { useCharacters } from 'presentation/hooks/useCharacters';
+import { CharactersFilter } from 'domain/usecases/GetCharacters';
+import ErrorMessage from 'presentation/components/ErrorMessage';
 import { StyledContainer, StyledTitle, StyledCardGrid } from './CharacterList.styles';
-import Pagination from '../../components/Pagination';
-import FilterControls from '../../components/FilterControls';
-import LoadingIndicator from '../../components/LoadingIndicator';
+import Pagination from 'presentation/components/Pagination';
+import FilterControls from 'presentation/components/FilterControls';
+import LoadingIndicator from 'presentation/components/LoadingIndicator';
 
 const CharacterList: React.FC = () => {
 	const [filters, setFilters] = useState<CharactersFilter>({});
