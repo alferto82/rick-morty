@@ -1,4 +1,16 @@
 # Welcome to Appspace React FE Challenge
+React and Morty applcation that allows to browse and interact with Rick&Morty data from API. This application has been built using React and Typescript. I have used a clean arquitecture to isolates different layers (domain, data and presentation), ensuring that each layer handles a specific responsibility. We have implemented a cache system in two levels to increase the performance (we cache filters with the collection and id's with the characters).
+
+## Tech Stack
+- Frontend Framework: React 18 with TypeScript
+- Routing: React Router
+- Testing: React testing library for unit tests, Playwright for E2E testing
+
+## Routing
+The application uses React Router with the following main routes:
+
+/ - Main list
+/character/:id - Individual details
 
 ## Installation & Setup
 
@@ -18,11 +30,15 @@
    ```bash
    yarn start
    ```
-4. **Run tests:**
+4. **Run unit tests:**
    ```bash
    yarn test
    ```
-5. **Build for production:**
+5. **Run e2e tests:**
+   ```bash
+   yarn e2e
+   ```
+6. **Build for production:**
    ```bash
    yarn build
    ```
