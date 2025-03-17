@@ -8,8 +8,12 @@ interface CharacterCardProps {
 
 const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
 	return (
-		<CardContainer className="character-card" to={`/character/${character.id}`}>
-			<CardImage src={character.image} alt={character.name} />
+		<CardContainer
+			className="character-card"
+			to={`/character/${character.id}`}
+			aria-label={`View details for ${character.name}`}
+		>
+			<CardImage src={character.image} alt={`Image of ${character.name}`} />
 			<CardContent>
 				<CardTitle>{character.name}</CardTitle>
 				<CardText>

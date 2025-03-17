@@ -53,6 +53,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
 				placeholder="Search by name..."
 				value={filters.name || ''}
 				onChange={handleInputChange}
+				aria-label="Search by name"
 			/>
 			<StyledOrderGroup>
 				<StyledLabel>Order</StyledLabel>
@@ -60,6 +61,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
 					<StyledSelect
 						value={orderField}
 						onChange={e => onOrderFieldChange(e.target.value as keyof Character)}
+						aria-label="Order field"
 					>
 						<option value="name">Name</option>
 						<option value="status">Status</option>
@@ -69,6 +71,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
 					<StyledSelect
 						value={orderDirection}
 						onChange={e => onOrderDirectionChange(e.target.value as 'asc' | 'desc')}
+						aria-label="Order direction"
 					>
 						<option value="asc">Ascending order</option>
 						<option value="desc">Descending order</option>
@@ -81,6 +84,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
 					<StyledSelect
 						value={filters.status || 'all'}
 						onChange={e => handleAdditionalFilterChange('status', e.target.value)}
+						aria-label="Filter status"
 					>
 						<option value="all">All Status</option>
 						<option value="Alive">Alive</option>
@@ -90,6 +94,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
 					<StyledSelect
 						value={filters.species || 'all'}
 						onChange={e => handleAdditionalFilterChange('species', e.target.value)}
+						aria-label="Filter species"
 					>
 						<option value="all">All Species</option>
 						<option value="Human">Human</option>
@@ -105,6 +110,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
 					<StyledSelect
 						value={filters.gender || 'all'}
 						onChange={e => handleAdditionalFilterChange('gender', e.target.value)}
+						aria-label="Filter gender"
 					>
 						<option value="all">All Genders</option>
 						<option value="Female">Female</option>

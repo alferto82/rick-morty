@@ -72,7 +72,7 @@ const CharacterList: React.FC = () => {
 			{error && <ErrorMessage message={error} />}
 
 			{!loading && (
-				<StyledCardGrid>
+				<StyledCardGrid aria-live="polite">
 					{characters.map(character => (
 						<CharacterCard key={character.id} character={character} />
 					))}

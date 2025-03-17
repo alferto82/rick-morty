@@ -10,10 +10,12 @@ const NotFoundPage: React.FC = () => {
 	}, [navigate]);
 
 	return (
-		<Container>
+		<Container role="alert">
 			<Title>404 - Page not found</Title>
 			<Message>Sorry, this page does not exist..</Message>
-			<StyledButton onClick={handleBackToHome}>Back to home</StyledButton>
+			<StyledButton onClick={handleBackToHome} aria-label="Back to home">
+				Back to home
+			</StyledButton>
 		</Container>
 	);
 };
