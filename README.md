@@ -1,6 +1,23 @@
 # Welcome to Appspace React FE Challenge
 React and Morty applcation that allows to browse and interact with Rick&Morty data from API. This application has been built using React and Typescript. I have used a clean arquitecture to isolates different layers (domain, data and presentation), ensuring that each layer handles a specific responsibility. We have implemented a cache system in two levels to increase the performance (we cache filters with the collection and id's with the characters).
 
+
+
+> Currently, the application is deployed in the URL:
+>
+>**[https://rick-morty-98c582bbf214.herokuapp.com/](https://rick-morty-98c582bbf214.herokuapp.com/)**
+
+
+# Table of Contents
+1. [Tech Stack](#tech-stack)
+2. [Routing](#routing)
+3. [Installation & Setup](#installation--setup)
+4. [Usage](#usage)
+5. [Architecture & Rationale](#architecture--rationale)
+6. [Folder Structure](#folder-structure)
+7. [Caching Strategy](#caching-strategy)
+8. [Deployment](#deployment)
+
 ## Tech Stack
 - Frontend Framework: React 18 with TypeScript
 - Routing: React Router
@@ -96,6 +113,7 @@ Clean Architecture facilitates the integration of new technologies or improvemen
 
 This architectural approach ensures that the project is robust, scalable, and easy to maintain, making it well-suited to evolve and accommodate new requirements in a controlled manner.
 
+## Folder Structure
 ```
 src/
 ├── domain/               // Business logic
