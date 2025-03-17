@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@playwright/test": "^1.51.0",
 		"@types/jest": "^27.5.2",
 		"@types/node": "^16.11.56",
 		"@types/react": "^18.0.17",

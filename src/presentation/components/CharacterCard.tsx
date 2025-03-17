@@ -8,7 +8,7 @@ interface CharacterCardProps {
 
 const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
 	return (
-		<CardContainer to={`/character/${character.id}`}>
+		<CardContainer className="character-card" to={`/character/${character.id}`}>
 			<CardImage src={character.image} alt={character.name} />
 			<CardContent>
 				<CardTitle>{character.name}</CardTitle>

@@ -34,22 +34,27 @@ After starting the application in development mode, the home page displays a lis
  You can:
 
 - **Search:** Enter a name in the search box to filter characters by name.
+
 ![alt text](./assets/image.png)
 
 - **Order:** Select an order field (Name, Status, Species, or Gender) and choose the direction (Ascending or Descending) to sort the list.
+
 ![alt text](./assets/image-1.png)
 
 - **Filter:** Use the additional filters to filter results by status, species, or gender.
+
 ![alt text](./assets/image-2.png)
 
 - **Pagination:** Navigate through pages using the pagination controls at the top and bottom of the list.
 ![alt text](./assets/image-3.png)
 
 - **View Details:** Click on a character card to open a detailed view with more information about the selected character.
+
 ![alt text](./assets/image-5.png)
 
 - **404 Page:**
 I have implemented a 404 Not Found page that is displayed whenever a user navigates to an undefined route
+
 ![alt text](./assets/image-6.png)
 
 ## Architecture & Rationale

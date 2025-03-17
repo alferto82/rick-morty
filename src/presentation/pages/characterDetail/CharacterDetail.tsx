@@ -28,7 +28,7 @@ const CharacterDetail: React.FC = () => {
 
 	return (
 		<DetailContainer>
-			<BackButton onClick={() => navigate('/')}>Volver</BackButton>
+			<BackButton onClick={() => navigate('/')}>Back</BackButton>
 			<DetailTitle>{character.name}</DetailTitle>
 			<InfoContainer>
 				<ImageContainer>
