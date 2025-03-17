@@ -31,7 +31,6 @@ test.describe('Character List Flow', () => {
 		await statusSelect.selectOption('Dead');
 
 		const statusElements = page.locator('.character-card p');
-		console.log(statusElements);
 		await expect(statusElements).toHaveCount(20);
 
 		const count = await statusElements.count();
